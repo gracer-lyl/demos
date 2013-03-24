@@ -1,0 +1,36 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>proxy page</title>
+</head>
+<body>
+	<div>
+		<h1>proxy page</h1>
+		<h2>This is a proxy page</h2>
+	</div>
+<script type="text/javascript">
+(function(window) {
+	var oldHeight = 0;
+	
+	function provideHeight() {
+		var height = location.href.split("#")[1];
+		if(height && oldHeight != height){
+			oldHeight = height;
+			if(window.parent.parent.getIframeData){
+				window.parent.parent.getIframeData(oldHeight);
+			}
+		}
+	}
+	// provide iframe page's height to host page
+	if(window.onhashchange) {
+		window.onhashchange = provideHeight;
+	} else {
+		setInterval(function(){
+			provideHeight();
+		}, 200);
+	}
+})(window);
+</script>
+</body>
+</html>

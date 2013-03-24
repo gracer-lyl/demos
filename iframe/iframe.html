@@ -1,0 +1,293 @@
+﻿<!DOCTYPE html><html><head id="ctl00_Head1">
+<title>_点评团_大众点评网团购频道_每日一次的精品团购</title>
+<link type="text/css" href="http://i3.dpfile.com/t/cssnew/c.process.v22.css" rel="stylesheet"/>
+<link type="text/css" href="http://i1.dpfile.com/t/cssnew/g.base.v34.css" rel="stylesheet"/>
+<title>
+
+</title>
+<script>document.documentElement.className=location.hash?'J_H':'';var G_rtop=+new Date,_gaq=[
+
+['_setAccount','UA-16601409-1'],
+
+['_addOrganic','soso','w'],
+
+['_addOrganic','sogou','query'],
+
+['_addOrganic','yodao','q'],
+
+['_addOrganic','bing','q'],
+
+['_addOrganic','gougou','search']
+
+],dpga=function(key){_gaq.push(['_trackPageview', key||''])},pageTracker={_trackPageview:dpga};</script>
+<style>
+html{overflow-y:hidden;}
+</style>
+</head><body>
+<form name="orderSubmit" method="post" id="orderSubmit" action="/paygate/orderSubmit">
+    <input type="hidden" id="outBizId" name="outBizId" value="103429291"/>
+    <input type="hidden" id="amount" name="amount" value="138"/>
+    <input type="hidden" id="thirdPartPayAmount" name="thirdPartPayAmount" value="138"/>
+    <input type="hidden" id="balancePayAmount" name="balancePayAmount" value="0"/>
+    <input type="hidden" id="returnUrl" name="returnUrl" value="http://o.p.dianping.com/http/orderReturn"/>
+	<input type="hidden" id="notifyUrl" name="notifyUrl" value="http://o.p.dianping.com/http/orderCallBack"/>
+	<input type="hidden" id="productName" name="productName" value="小南国海之源SPA"/>
+	<input type="hidden" id="productDesc" name="productDesc" value="仅售138元,价值168元浴资券1张!含自助!3店通用!全新健康理念,以水为本滋养身心,以水养人,感受自然韵律,畅享好时光!"/>
+	<input type="hidden" id="productUrl" name="productUrl" value="http://t.dianping.com/deal/112699"/>
+	<input type="hidden" id="productId" name="productId" value="112699"/>
+	<input type="hidden" id="orderId" name="orderId" value="37396633"/>
+	<input type="hidden" id="userId" name="userId" value="18166602"/>
+	<input type="hidden" id="couponId" name="couponId" value=""/>
+	<input type="hidden" id="isFirstBuy" name="isFirstBuy" value="false"/>
+	<input type="hidden" id="isCanUseCoupon" name="isCanUseCoupon" value="true"/>
+	<input type="hidden" id="actualSign" name="actualSign" value="deb7b23c6f9fc2ad2db827dc6aa3b3c2"/>
+	<input type="hidden" id="source" name="source" value="order"/>
+<div class="order-process">
+	<div class="pay-method">
+        <div class="pay-method">
+        
+        	<h3 class="title">选择支付方式</h3>
+        	<p class="money-infor"><strong>您的点评余额：<span class="num" id="J_balance-note">&#165;0</span>，还需另外支付：<span class="pay" id="J_extra-pay">&#165;138</span></strong></p>
+        	
+            <div class="voucher-box Fix separated">
+            		<div class="voucher">
+                    <input type="checkbox" style="vertical-align: middle;" id="J_check-coupon" /><label for="J_check-coupon">使用抵用券或优惠代码 </label>
+                    </div>
+				<div class="choose-box Hide" id="J_coupon-wrap" >
+                    <div class="voucher ">
+                        <input type="radio" id="J_choose-coupon" name="coupontype" class="radio"  disabled="disabled">
+                        <label for="J_choose-coupon" class="text">使用抵用券</label>
+                        <select  id="couponlist" name="couponlist"   disabled="disabled">
+        					<option  selected="selected"  value="0">请使用抵用券</option>
+        				</select>参与点评团的活动可获得抵用券
+                    </div>
+                    <div class="code Fix">
+                        <div class="Left">
+                        <input type="radio" id="J_input-coupon" name="coupontype" class="radio"   checked="checked">
+                        <label for="J_input-coupon" class="text">输入优惠代码&nbsp;&nbsp;&nbsp;</label>
+                        <span class="J_ic-wrap">
+                            <input type="text"  class="choose-input" id="J_coupon-input"/>
+                           <div  class="Hide"  id="J_cap" style="margin:8px 0 8px 25px;"><div class="capcha">
+								<img alt="看不清楚?请点击!" class="mcImg" id="mcImgVC" onclick="this.src='/ajax/validateCheckCode?random=' + Math.floor(Math.random()*1001) ;" src="/ajax/validateCheckCode" />
+							<a href="#" onclick="document.getElementById('mcImgVC').src='/ajax/validateCheckCode?random=' + Math.floor(Math.random()*1001);return false;">看不清？换一张</a></div><div>
+							<label for="ctl00_PlaceHolderPage_validate" id="ctl00_PlaceHolderPage_lbValidate">验证码:</label><input name="J_cap_input" type="text" id="J_cap_input" tabindex="3" class="f-input J_cap_input" size="4" /><span id="ctl00_PlaceHolderPage_fv_validate" class="fv-err Hide J_cap_err"></span></div></div>
+                            <input type="button" value="确定" id="J_ic-submit" />
+                        </span>
+                        <span class="J_ic-wrap Hide">
+                            <span id="J_ic-txt"></span>
+                            <a id="J_ic-cancel" href="#">取消</a>
+                        </span>
+                        <span class="warning" id="J_ic-err"></span>
+                        </div>
+                    </div>
+                </div>
+        	</div>
+        	
+            	<div class="payway separated j-payway">
+            	    <div class="title title J_bank_title">网上银行支付</div>
+                    <ul class="bank-list Fix J_bank_list  Hide">
+	                                        <li class="">
+	                                            <input type="radio" value="ICBCB2C-2" name="paytype" id="check-icbcb2c-2" >
+	                                            <label class="icon-box" for="check-icbcb2c-2" >
+	                                                <span class="icon ICBCB2C" title="ICBCB2C"></span>
+	                                            </label>
+	                                        </li>
+	                                        <li class="">
+	                                            <input type="radio" value="CMB-2" name="paytype" id="check-cmb-2" >
+	                                            <label class="icon-box" for="check-cmb-2" >
+	                                                <span class="icon CMB" title="CMB"></span>
+	                                            </label>
+	                                        </li>
+	                                        <li class="">
+	                                            <input type="radio" value="CCB-2" name="paytype" id="check-ccb-2" >
+	                                            <label class="icon-box" for="check-ccb-2" >
+	                                                <span class="icon CCB" title="CCB"></span>
+	                                            </label>
+	                                        </li>
+	                                        <li class="">
+	                                            <input type="radio" value="ABC-2" name="paytype" id="check-abc-2" >
+	                                            <label class="icon-box" for="check-abc-2" >
+	                                                <span class="icon ABC" title="ABC"></span>
+	                                            </label>
+	                                        </li>
+	                                        <li class="">
+	                                            <input type="radio" value="COMM-2" name="paytype" id="check-comm-2" >
+	                                            <label class="icon-box" for="check-comm-2" >
+	                                                <span class="icon COMM" title="COMM"></span>
+	                                            </label>
+	                                        </li>
+	                                        <li class="">
+	                                            <input type="radio" value="BOCB2C-2" name="paytype" id="check-bocb2c-2" >
+	                                            <label class="icon-box" for="check-bocb2c-2" >
+	                                                <span class="icon BOCB2C" title="BOCB2C"></span>
+	                                            </label>
+	                                        </li>
+	                                        <li class="">
+	                                            <input type="radio" value="CIB-2" name="paytype" id="check-cib-2" >
+	                                            <label class="icon-box" for="check-cib-2" >
+	                                                <span class="icon CIB" title="CIB"></span>
+	                                            </label>
+	                                        </li>
+	                                        <li class="">
+	                                            <input type="radio" value="CEBBANK-2" name="paytype" id="check-cebbank-2" >
+	                                            <label class="icon-box" for="check-cebbank-2" >
+	                                                <span class="icon CEBBANK" title="CEBBANK"></span>
+	                                            </label>
+	                                        </li>
+	                                        <li class="">
+	                                            <input type="radio" value="SPDB-2" name="paytype" id="check-spdb-2" >
+	                                            <label class="icon-box" for="check-spdb-2" >
+	                                                <span class="icon SPDB" title="SPDB"></span>
+	                                            </label>
+	                                        </li>
+	                                        <li class="">
+	                                            <input type="radio" value="GDB-2" name="paytype" id="check-gdb-2" >
+	                                            <label class="icon-box" for="check-gdb-2" >
+	                                                <span class="icon GDB" title="GDB"></span>
+	                                            </label>
+	                                        </li>
+	                                        <li class="">
+	                                            <input type="radio" value="CITIC-2" name="paytype" id="check-citic-2" >
+	                                            <label class="icon-box" for="check-citic-2" >
+	                                                <span class="icon CITIC" title="CITIC"></span>
+	                                            </label>
+	                                        </li>
+	                                        <li class="">
+	                                            <input type="radio" value="CMBC-2" name="paytype" id="check-cmbc-2" >
+	                                            <label class="icon-box" for="check-cmbc-2" >
+	                                                <span class="icon CMBC" title="CMBC"></span>
+	                                            </label>
+	                                        </li>
+	                                        <li class="">
+	                                            <input type="radio" value="SPABANK-2" name="paytype" id="check-spabank-2" >
+	                                            <label class="icon-box" for="check-spabank-2" >
+	                                                <span class="icon SPABANK" title="SPABANK"></span>
+	                                            </label>
+	                                        </li>
+	                                        <li class="">
+	                                            <input type="radio" value="PSBC-DEBIT-2" name="paytype" id="check-psbc-debit-2" >
+	                                            <label class="icon-box" for="check-psbc-debit-2" >
+	                                                <span class="icon PSBC-DEBIT" title="PSBC-DEBIT"></span>
+	                                            </label>
+	                                        </li>
+	                                        <li class="">
+	                                            <input type="radio" value="SHRCB-2" name="paytype" id="check-shrcb-2" >
+	                                            <label class="icon-box" for="check-shrcb-2" >
+	                                                <span class="icon SHRCB" title="SHRCB"></span>
+	                                            </label>
+	                                        </li>
+	                                        <li class="">
+	                                            <input type="radio" value="HZCBB2C-2" name="paytype" id="check-hzcbb2c-2" >
+	                                            <label class="icon-box" for="check-hzcbb2c-2" >
+	                                                <span class="icon HZCBB2C" title="HZCBB2C"></span>
+	                                            </label>
+	                                        </li>
+                    </ul>
+						<div class="title title J_bank_title">信用卡直接支付<span class="tips">(无需开通网上银行，支持大额支付)</span></div>
+	                    <ul class="bank-list Fix J_bank_list  Hide">
+	                                        <li class="">
+	                                            <input type="radio" value="CMB-3" name="paytype" id="check-cmb-3" >
+	                                            <label class="icon-box" for="check-cmb-3" >
+	                                                <span class="icon CMB" title="CMB"></span>
+	                                            </label>
+	                                        </li>
+	                                        <li class="">
+	                                            <input type="radio" value="CCB-3" name="paytype" id="check-ccb-3" >
+	                                            <label class="icon-box" for="check-ccb-3" >
+	                                                <span class="icon CCB" title="CCB"></span>
+	                                            </label>
+	                                        </li>
+	                                        <li class="">
+	                                            <input type="radio" value="ICBC-3" name="paytype" id="check-icbc-3" >
+	                                            <label class="icon-box" for="check-icbc-3" >
+	                                                <span class="icon ICBC" title="ICBC"></span>
+	                                            </label>
+	                                        </li>
+	                                        <li class="">
+	                                            <input type="radio" value="BOC-3" name="paytype" id="check-boc-3" >
+	                                            <label class="icon-box" for="check-boc-3" >
+	                                                <span class="icon BOC" title="BOC"></span>
+	                                            </label>
+	                                        </li>
+	                                        <li class="">
+	                                            <input type="radio" value="ABC-3" name="paytype" id="check-abc-3" >
+	                                            <label class="icon-box" for="check-abc-3" >
+	                                                <span class="icon ABC" title="ABC"></span>
+	                                            </label>
+	                                        </li>
+	                                        <li class="">
+	                                            <input type="radio" value="CEB-3" name="paytype" id="check-ceb-3" >
+	                                            <label class="icon-box" for="check-ceb-3" >
+	                                                <span class="icon CEB" title="CEB"></span>
+	                                            </label>
+	                                        </li>
+	                                        <li class="">
+	                                            <input type="radio" value="SPABANK-3" name="paytype" id="check-spabank-3" >
+	                                            <label class="icon-box" for="check-spabank-3" >
+	                                                <span class="icon SPABANK" title="SPABANK"></span>
+	                                            </label>
+	                                        </li>
+	                                        <li class="">
+	                                            <input type="radio" value="GDB-EXPRESS-CREDIT-3" name="paytype" id="check-gdb-express-credit-3" >
+	                                            <label class="icon-box" for="check-gdb-express-credit-3" >
+	                                                <span class="icon GDB-EXPRESS-CREDIT" title="GDB-EXPRESS-CREDIT"></span>
+	                                            </label>
+	                                        </li>
+	                    </ul>
+					<div class="title title-current J_bank_title">支付宝支付<span class="tips">(推荐有支付宝账号的用户使用)</span></div>
+					<ul class="bank-list Fix J_bank_list ">
+						<li class="">
+                        	<input type="radio" value="ALIPAY-1" name="paytype" id="check-alipay" checked>
+                            <label for="check-alipay" class="icon-box"><span class="icon alipay" title="alipay"></span></label>
+               			</li>
+                    </ul>
+            	</div>
+            	</div>
+        
+        </div>
+    </div>
+</div>
+
+
+</form>
+
+<iframe id="dpIframe" src="http://www.honglei.net/demo/iframe_c.html" width="0" height="0" scrolling="no" frameborder="0"></iframe>
+
+<script type="text/javascript">
+(function (win, doc) {
+	var dpIframeEle = doc.getElementById('dpIframe');
+		iframeSrc = dpIframeEle.src.split("#")[0],
+		oldHeight = 0;
+	function getHeight() {
+		var height;
+		if(doc.body.offsetHeight) {
+			height = doc.body.offsetHeight + 20;
+		} else if(doc.body.scrollHeight) {
+			height = doc.body.scrollHeight + 30;
+		}
+		if(oldHeight != height){
+			oldHeight = height;
+			dpIframeEle.src = iframeSrc + '#' + oldHeight;
+		}
+	}
+	if(win.onhashchange) {
+		win.onhashchange = getHeight;
+	} else {
+		setInterval(function(){
+			getHeight();
+		}, 200);
+	}
+})(window, document);
+</script>
+
+<script>
+
+var __loaderConfig={appBase:'t/jsnew/app/',libBase:'lib/1.0/',server:'t{n}.dpfile.com'};__loaderConfig.server='i{n}.dpfile.com';__loaderConfig.libBase='lib/1.0/';</script>
+
+<script src="http://i1.dpfile.com/lib/1.0/neuron-active.min.v18.js"></script><script>DP.load("http://i3.dpfile.com/x_x/version.min.v482.js");</script><script>try{document.hippo(1752,"").ext({p_render:+(new Date)-G_rtop}).pv(1, 0)}catch(e){};</script>
+
+<script>DP.require("order::pages/payment");DP.provide(['order::coupon','order::bank'])</script>
+</body></html>
+
+
+

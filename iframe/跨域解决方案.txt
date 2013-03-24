@@ -1,0 +1,96 @@
+﻿a.html
+
+-- 点评开发者
+
+<iframe id="iframe" src="http://202.165.178.27/demo/iframe_b.html" width="600" height="0" scrolling="no" frameborder="0"></iframe>
+
+<script type="text/javascript">
+DP.ready(function(){
+	var ifrEle = document.getElementById('iframe');
+	function getIframeData(data){
+		ifrEle.style.height = data+ 'px';
+	}
+	window.getIframeData = getIframeData;
+})
+</script>
+===============================
+
+b.html
+
+-- 团票网开发
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<iframe id="dpIframe" src="http://www.honglei.net/demo/iframe_c.html" width="0" height="0" scrolling="no" frameborder="0"></iframe>
+
+<script type="text/javascript">
+(function (win, doc) {
+	var dpIframeEle = doc.getElementById('dpIframe');
+		iframeSrc = dpIframeEle.src.split("#")[0],
+		oldHeight = 0;
+	function getHeight() {
+		var height;
+		if(doc.body.offsetHeight) {
+			height = doc.body.offsetHeight + 20;
+		} else if(doc.body.scrollHeight) {
+			height = doc.body.scrollHeight + 30;
+		}
+		if(oldHeight != height){
+			oldHeight = height;
+			dpIframeEle.src = iframeSrc + '#' + oldHeight;
+		}
+	}
+	if(win.onhashchange) {
+		win.onhashchange = getHeight;
+	} else {
+		setInterval(function(){
+			getHeight();
+		}, 200);
+	}
+})(window, document);
+</script>
+===============================
+
+c.html
+
+-- 点评开发者
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>proxy page</title>
+</head>
+<body>
+	<div>
+		<h1>proxy page</h1>
+		<h2>This is a proxy page</h2>
+	</div>
+<script type="text/javascript">
+(function(window) {
+	var oldHeight = 0;
+	
+	function provideHeight() {
+		var height = location.href.split("#")[1];
+		if(height && oldHeight != height){
+			oldHeight = height;
+			if(window.parent.parent.getIframeData){
+				window.parent.parent.getIframeData(oldHeight);
+			}
+		}
+	}
+	// provide iframe page's height to host page
+	if(window.onhashchange) {
+		window.onhashchange = provideHeight;
+	} else {
+		setInterval(function(){
+			provideHeight();
+		}, 200);
+	}
+})(window);
+</script>
+</body>
+</html>
+
+
+
