@@ -1,0 +1,16 @@
+CACHE MANIFEST
+
+# 2013-3-12 18:30
+CACHE:
+/t/css/t.css
+/t/js/zepto.min.js
+/t/js/base.js
+/t/js/hippo.min.js
+/t/img/sprite.png
+/t/img/remark.png
+/t/img/logo.png
+/t/img/wrong-logo.png
+
+NETWORK: *
+
+FALLBACK:

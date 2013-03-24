@@ -1,0 +1,44 @@
+主题：由iPhone go键引起的对form提交的研究
+
+（1）在做m站搜索提交表单的时候，遇到了个比较容易忽视的问题。
+	问题：当我点击iPhone的go键时候（这个一般相当于桌面浏览器的回车键），本来想着会直接执行我的Js验证（绑定在A标签上），出现input不能为空的友好提示；
+	可惜它没有出现，并且它直接带着空的keyword，跳转到搜索结果页了。
+	为什么不去执行JS验证呢？只认识type="submit"的按钮吗？
+	如果只认识type="submit"的按钮，为什么这个表单还是会提交呢？
+	结构：
+		<form action="/tuan/search" method="post" id="searchForm" autocomplete="off">
+			 <input type="text" autocomplete="off" class="default" placeholder="输入团购商户名、类别、商区等关键字" name="keyword" id="J_search_input">
+			 <a href="javascript:void(0)" title="搜索" class="search-icon"  id="J_search_btn"></a>
+		</form>
+	一看结构，基本上也没问题，我深知如果在form标签上增添onSubmit="searchValidate();"属性也是可以有JS验证的。
+	但是我不喜欢这样子的方式，我还是把A标签换成了普通的button；在保持样式没问题的基础上，结构变成了：
+		<button type="submit" class="search-icon" title="搜索" id="J_search_btn"></button>
+	结果就可以让go键（Enter）来执行JS验证并处理提交。代码如下：
+	$('#J_search_btn').click(function (e) {
+	      e && e.preventDefault();  // 阻止默认直接提交表单的事件
+	      var keyword = $.trim(searchInput.val());
+	      if(keyword === '') {
+	        DP.Notification.flashBox('请输入搜索关键字');
+	        return;
+	      } else {
+	        searchForm.submit();
+	      }
+	});
+	我理解到Enter键提交表单的原理是：
+	找到form中的submit按钮然后触发其click事件，而submit按钮的click事件的默认动作就是提交表单，我采用preventDefault()方法阻止默认事件，实现表单的简单验证；
+	
+（2）其实，submit按钮并不是必须的，我们可以采取另外一种方法也可以实现验证和提交。
+	几乎所有网上的防止Enter提交表单的方法都是监视keyCode为13的键盘事件, 其实更简单的办法是不要使用submit按钮, 用a标签或者是button代替, 添加click事件, 然后在需要的地方触发click事件即可。
+
+（3）这个问题还没有完，如果在form属性上添加onSubmit事件，这个和submit按钮事件的先后顺序是什么样子的？会不会都执行掉？
+	经过测试，这个是先执行submit按钮事件，如果返回true，则接着执行onSubmit绑定的事件。若此时返回true，就会提交表单。
+	看来，我们可以总结出一条默认事件的链，keydown，keypress，submit click，（onSubmit）submit form。
+
+（4）我在测试中还发现，表单中如果只有一个type="text"的input，即使是没有一个type="submit"的按钮，表单依然可以提交（input的回车本来就被设置成去提交表单）。
+	如果在form中有两个或以上的input字段，且没有一个type="submit"的按钮，那么Enter键不会有任何响应，不会提交表单；有了submit按钮就可以。
+	还有，设置submit按钮的样式style="display:none;"，那么submit不再起作用了。
+
+（5）扩展下知识：
+	当表单中包含有image或者submit类型的按钮时，会将第一个该类型的按钮默认为表单提交按钮，也就是你按回车键就会自动触发的按钮；<input type=submit>或者<input type=image>；如果不含有表单，则不会触发提交表单事件；
+
+

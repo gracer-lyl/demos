@@ -1,5 +1,5 @@
 
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
 <head>
 <title>团购-大众点评团北京站</title>
@@ -15,11 +15,11 @@
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-title" content="点评团触屏版-北京团购-大众点评团北京站">
 
-<link rel="apple-touch-startup-image" size="640x920" href="/t/img/startup4.png" media="(device-height:480px)">
-<link rel="apple-touch-startup-image" href="/t/img/startup5.png" media="(device-height:568px)">
-<link rel="apple-touch-icon-precomposed" sizes="57x57" href="/t/img/apple-touch-icon-57x57.png" />
-<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/t/img/apple-touch-icon-72x72.png" />
-<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/t/img/apple-touch-icon-114x114.png" />
+<link rel="apple-touch-startup-image" size="640x920" href="t/img/startup4.png" media="(device-height:480px)">
+<link rel="apple-touch-startup-image" href="t/img/startup5.png" media="(device-height:568px)">
+<link rel="apple-touch-icon-precomposed" sizes="57x57" href="t/img/apple-touch-icon-57x57.png" />
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="t/img/apple-touch-icon-72x72.png" />
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="t/img/apple-touch-icon-114x114.png" />
 
 <script>var G_rtop=+new Date,_gaq=[
 ['_setAccount','UA-16496742-2'],
@@ -35,19 +35,17 @@ dpga=function(key){_gaq.push(['_trackPageview', key||''])},
 pageTracker={_trackPageview:dpga},_hip=[
 ['_setPageId', 171021]];
 </script>
-<link  href="/t/css/t.css" rel="stylesheet" type="text/css" />
+<link  href="t/css/t.css" rel="stylesheet" type="text/css" />
 
 </head>
 <body>
-	
-	
-
 	<header>
 		<div class="header-box">
 			<div class="search-mode">
 				<div class="search">
-				<form action="/tuan/search" method="post" id="searchForm" autocomplete="off">
+				<form action="/tuan/search" method="get" id="searchForm" autocomplete="off" onSubmit="alert(2);return false;">
 					 <input type="text" autocomplete="off" autocapitalize="off" autocorrect="off" class="default" placeholder="输入团购商户名、类别、商区等关键字" name="keyword" id="J_search_input">
+					 <!--<a href="javascript:void(0)" title="搜索" class="search-icon"  id="J_search_btn"></a>-->
 					 <button type="submit" class="search-icon" title="搜索" id="J_search_btn"></button>
 				</form>
 				</div>
@@ -63,8 +61,8 @@ pageTracker={_trackPageview:dpga},_hip=[
 			</ul>
 		</div>
 	</section>
-<script src="js/zepto.min.js" type="text/javascript"></script>
-<script src="js/base.min.js" type="text/javascript"></script>
+<script src="t/js/zepto.min.js" type="text/javascript"></script>
+<script src="t/js/base.js" type="text/javascript"></script>
 <script type="text/javascript">
 $(document).ready(function(){
 	DP.app.returnBack($('.returnBack'));
@@ -80,7 +78,6 @@ $(document).ready(function(){
 	    };
 	    
 	}
-	// <iframe id="cachePage" frameborder="0" src="/t/html5cache/tuangou.html" style="display:none"></iframe>
 });
 
 </script>
