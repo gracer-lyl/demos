@@ -1,0 +1,101 @@
+<#assign title="${dealGroup.titleAbstract}团购-大众点评团${currentCity.cityName}站" />
+<#assign waps=JspTaglibs["/WEB-INF/tld/wap-tags.tld"]>
+<#include "/WEB-INF/pages/common/header.ftl">
+<body>
+<!--顶部-->
+<header>
+	<a href="javascript:void(0)" class="return returnBack"><span class="return-txt">返回</span></a>团购详情
+</header>
+
+
+<!--顶部 end-->
+
+<!--内容-->
+<div class="deal-box">
+	<div class="img">
+    	<img src="<@waps.PictureUrlFormat url="${dealGroup.imageUrl}" sub="3" />" />
+        <div class="dask"></div>
+        <h1>${dealGroup.shortTitle}</h1>
+    </div>
+    <div class="infor">
+       	<#if dealGroup.isSoldOut()>
+    		<span class="price">￥${dealGroup.price?string.computer}</span><span class="old-price">￥${dealGroup.marketPrice?string.computer}</span><a class="over-btn Right" title="" href="#">卖光了</a>
+    	<#elseif isExpired>
+    		<span class="price">￥${dealGroup.price?string.computer}</span><span class="old-price">￥${dealGroup.marketPrice?string.computer}</span><a class="over-btn Right" title="" href="#">已过期</a>
+    	<#elseif beginReady>
+    		<span class="price">￥${dealGroup.price?string.computer}</span><span class="old-price">￥${dealGroup.marketPrice?string.computer}</span><a class="over-btn Right" title="" href="#">即将开始</a>    		
+    	<#else>
+    		<span class="price">￥${dealGroup.price?string.computer}</span><span class="old-price">￥${dealGroup.marketPrice?string.computer}</span><a class="<#if disableByUser || disableByDeal>over-btn Right<#else>buy-btn Right</#if>" title="" href="<#if (dealGroup.dealDTOs.size() > 1)>/tuan/dealselect/${dealGroup.id}<#elseif (dealGroup.dealDTOs.size() == 1)>/tuan/buy/${dealGroup.dealDTOs.get(0).dealId}</#if>">立即购买</a>
+    	</#if>
+    </div>
+</div>
+<section>
+	<div class="Box">
+    	<div class="order-list">
+            <ul>
+            <li>
+            	<#if dealGroup.isAutoRefund>
+                	<span class="support Left"><i class="icon-s"></i>支持随时退</span><span class="support Right"><i class="icon-s"></i>支持过期退</span>
+                <#else>
+                	<span class="support Left"><i class="icon-e"></i>不支持随时退</span><span class="support Right"><i class="icon-e"></i>不支持过期退</span>
+                </#if>
+            </li>
+            <li>
+                <#if ! isExpired>
+                	<span>剩余<@waps.RemainTimeFormat endTime="${dealGroup.endDate.time}" /></span>
+                <#else>
+                	<span>结束于${dealGroup.endDate?string("yy年MM月dd日")}</span>
+                </#if>
+                <span class="Right">${dealGroup.realTimeInfoDTO.currentJoin}人已购买<#if (dealGroup.realTimeInfoDTO.remain > 0) >，仅剩${dealGroup.realTimeInfoDTO.remain}个</#if></span>
+            </li>
+            </ul>
+        </div>
+
+    </div>
+    
+    
+    	<#if (dealGroup.shopList ?? && dealGroup.shopList.size() == 1)>
+    	<div class="Box nom-box shop-box">
+	    	<#assign shop=dealGroup.shopList.get(0)> 
+	    	<h3 class="title">${shop.shopName}</h3><span class="distance">${distance}</span>
+	        <table width="100%" cellpadding="0" cellspacing="0">
+	        <tr>
+	            <td>
+	            <div class="infor">
+	                <div class="score Fix"><span title="五星商户" class="item-rank-rst irr-star${shop.shopPower}">评分:五星商户</span></div>
+	
+	                <p><a href="tel:${shop.phoneNo}">${shop.phoneNo}</a></p>
+	                <p>${shop.businessHours}</p>
+	                <p>${shop.address}</p>
+	            </div>
+	            </td>
+	            <td width="55" align="center" valign="middle">
+	
+	            </td>
+	        </tr>
+	        </table>
+	    </div>
+	    <#elseif (dealGroup.shopList ?? && dealGroup.shopList.size() > 1)>
+	    	<div class="Box"><a class="more-btn" title="" href="/tuan/shoplist/${dealGroup.id}">查看全部${dealGroup.shopList.size()}家适用商户</a></div>
+        </#if>
+    <div class="Box nom-box">
+		${detail}
+    </div>
+    
+    <div class="Box nom-box">
+    	<#if specialPoint?? && specialPoint != "">
+		${specialPoint}
+		</#if>
+    </div>
+    
+    <div class="Box"><a id="J_dealDetail" class="more-btn" data-id="${dealGroup.id}" title="更多图文详情" href="javascript:;">更多图文详情</a></div>
+</section>
+<#include "/WEB-INF/pages/common/footer.ftl">
+<script type="text/javascript">
+$(document).ready(function(){
+	DP.app.dealDetails();
+});
+</script>
+</body>
+<!--内容 end-->
+</html>

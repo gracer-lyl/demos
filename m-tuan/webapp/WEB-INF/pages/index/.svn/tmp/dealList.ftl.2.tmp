@@ -1,0 +1,61 @@
+<#assign ava=JspTaglibs["/WEB-INF/tld/avatar-tags.tld"]>  
+<#include "/WEB-INF/pages/macro/commonMacro.ftl">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>${currentCity.cityName}团购-大众点评团${currentCity.cityName}站</title>
+	<link  href="<@ava.extStaticResource resource='/t/css/t.css'/>" rel="stylesheet" type="text/css">
+	<style type="text/css">
+	.deal-tab .pic-box {width:86px;height:61px;}
+	</style>
+</head>
+
+<header class="slide">
+	<a id="J_togglerBar" data-status="off" href="javascript:;" class="action-bar"></a>
+	点评团 • <a href="${mtBase}/citylist">${currentCity.cityName}<b class="drop-down"></b></a>
+	<a href="${mtBase}/search" title="" class="search-icon"></a>
+	<input id="J_isToday" type="hidden" value="${isToday}"/>
+</header>
+
+
+<section class="main slide">
+	<#-- 筛选条件栏 -->
+	<#include "/WEB-INF/pages/common/selection.ftl">
+    
+    <div class="index-list">
+    <#if (dealGroupList?exists && dealGroupList?size > 0)>
+    	<#-- 团购单展示 -->
+    	<#include "/WEB-INF/pages/common/displayDealGroup.ftl">
+    <#else>
+    	<div class="ticket-none-box">
+    		没找到你要的团购<br>
+    		试试别的筛选条件吧>_<
+    	</div>
+    </#if>
+    </div>
+</section>
+
+<#-- 查看更多按钮显示 -->
+<#include "/WEB-INF/pages/common/viewMore.ftl">
+
+
+<#-- 滑动导航栏 -->
+<#include "/WEB-INF/pages/common/navigation.ftl">
+
+
+<#-- 滑动筛选条件  -->
+<#include "/WEB-INF/pages/index/dynamicSelect.ftl">
+
+
+<#include "/WEB-INF/pages/common/footer.ftl">
+<script type="text/javascript">
+$(document).ready(function(){
+	DP.app.posCity();
+	DP.app.dealOverlay();
+	DP.app.moreDeal();
+	DP.app.slideNavi();
+});
+</script>
+
+

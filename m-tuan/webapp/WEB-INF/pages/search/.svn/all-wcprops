@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/dianping/!svn/ver/93839/tuangou/tuangou-mt/branches/20130315_higuain.chen_update/tuangou-mt-web/src/main/webapp/WEB-INF/pages/search
+END
+searchResult.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 154
+/svn/dianping/!svn/ver/93839/tuangou/tuangou-mt/branches/20130315_higuain.chen_update/tuangou-mt-web/src/main/webapp/WEB-INF/pages/search/searchResult.ftl
+END
+search.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/svn/dianping/!svn/ver/93839/tuangou/tuangou-mt/branches/20130315_higuain.chen_update/tuangou-mt-web/src/main/webapp/WEB-INF/pages/search/search.ftl
+END
+recommendList.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 155
+/svn/dianping/!svn/ver/92847/tuangou/tuangou-mt/branches/20130315_higuain.chen_update/tuangou-mt-web/src/main/webapp/WEB-INF/pages/search/recommendList.ftl
+END
+seachSelection.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 156
+/svn/dianping/!svn/ver/93839/tuangou/tuangou-mt/branches/20130315_higuain.chen_update/tuangou-mt-web/src/main/webapp/WEB-INF/pages/search/seachSelection.ftl
+END
