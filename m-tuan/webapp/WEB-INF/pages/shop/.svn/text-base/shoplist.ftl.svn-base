@@ -1,0 +1,54 @@
+<#assign waps=JspTaglibs["/WEB-INF/tld/wap-tags.tld"]>
+<#assign pageID=171014 />
+<#assign ava=JspTaglibs["/WEB-INF/tld/avatar-tags.tld"]> 
+<!DOCTYPE HTML>
+<html>
+<#assign title="${dealGroup.shortTitle}团购-大众点评团${currentCity.cityName}站" />
+<#include "/WEB-INF/pages/common/header.ftl">
+<body>
+<!--顶部-->
+<header>
+	<a href="javascript:void(0)" title="美食" class="noDirect return returnBack"><span class="return-txt">团购详情</span></a>适用商户
+</header>
+
+<!--顶部 end-->
+
+<!--内容-->
+<section id="J_shopList">
+	<#list dealGroup.shopList as shop>
+    	<div class="Box nom-box shop-box">
+	    	<h3 class="title">${shop.shopName}</h3><span class="distance">${distance}</span>
+	        <table width="100%" cellpadding="0" cellspacing="0">
+	        <tr>
+	            <td>
+	            <div class="infor">
+	                <div class="score Fix"><span title="五星商户" class="item-rank-rst irr-star${shop.shopPower}">评分:五星商户</span></div>
+	
+	                <p><a href="tel:${shop.phoneNo}">${shop.phoneNo}</a></p>
+	                <p>${shop.businessHours}</p>
+	                <p>${shop.address}</p>
+	            </div>
+	            </td>
+	            <td width="55" align="center" valign="middle">
+	            <a class="go" onclick="_gaq.push(['_trackEvent', 'shoplist_shop', 'click', ''])" href="http://m.dianping.com/shop/${shop.shopId}"><i class="arrow-ent"></i></a>
+	
+	            </td>
+	        </tr>
+	        </table>
+	    </div>
+    </#list>
+    
+</section>
+<#if (dealGroup.shopList.size() > 25)>
+<div class="btn-box Fix"><a data-id="${dealGroup.id}" id="J_moreBtn" data-current="1" class="noDirect more-btn Left" title="" href="javascript:;"><i class="icon-more"></i>查看更多</a><a class="noDirect more-btn Right" title="" href="javascript:window.scroll(0, 0);"><i class="icon-top"></i>返回顶部</a></div>
+</#if>
+<!--内容 end-->
+<#include "/WEB-INF/pages/common/footer.ftl">
+<script type="text/javascript">pageTracker._trackPageview('shoplist/${currentCity.cityName}');</script>
+<script type="text/javascript">
+$(document).ready(function(){
+	DP.app.getMoreMerchant();
+});
+</script>
+</body>
+</html>

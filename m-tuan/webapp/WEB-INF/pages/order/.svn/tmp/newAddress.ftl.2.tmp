@@ -1,0 +1,54 @@
+<#assign ava=JspTaglibs["/WEB-INF/tld/avatar-tags.tld"]>  
+<#include "/WEB-INF/pages/macro/hideMobileNo.ftl">
+<#assign title="配送地址-大众点评团${currentCity.cityName}站" />
+<#include "/WEB-INF/pages/common/header.ftl">
+
+<body>
+<!--顶部-->
+<header>
+	<a href="${mtBase}<#if deliverList?exists>/deliveryinfo<#else>/buy/${thisDeal.dealId?c}</#if>"
+	  class="return"><span class="return-txt"><#if deliverList?exists>地址列表<#else>提交订单</#if></span></a>新地址
+</header>
+<!--顶部 end-->
+
+<!--内容-->
+<section>
+	<form action="${mtBase}/saveAddress" id="dealform" method="post">
+		<div class="Box">
+			<h5>请认真填写配送信息，以保证货品送达</h5>
+			<table width="100%" class="list-tab" cellpadding="0" cellspacing="0">
+	        	<tr><td class="t">省份：</td><td><select name="province" id="J_province" type="text">
+	        	   <#if divisionList??>
+	        	      <option value="0">--请选择--</option>
+	        	      <#list divisionList as division>
+	        	          <option value="${division.id?c}">${division.name}</option>
+	        	      </#list>	        	
+	        	   </#if>	        	      
+	        	</select></td></tr>
+	            <tr><td class="t">城市：</td><td><select type="text" name="city" id="J_city"><option value="0">--请选择--</option></select></td></tr>
+	            <tr><td class="t">区县：</td><td><select type="text" name="district" id="J_district"><option value="0">--请选择--</option></select></td></tr>
+	            <tr><td class="t">详细地址：</td><td><input id="J_detailAddr" class="f-input" placeholder="无需重复填写省市区" type="text" maxlength="200" name="address"></td></tr>
+	            <tr><td class="t">邮编：</td><td><input id="J_postcode" class="f-input" type="text" name="postCode" placeholder=""></td></tr>
+	            <tr><td class="t">收货人：</td><td><input id="J_consignee" class="f-input" type="text" name="consignee" placeholder=""></td></tr>
+	            <tr><td class="t">电话：</td><td><input id="J_telphone" class="f-input" type="text" name="phoneNO" placeholder=""></td></tr>
+	        </table>
+		</div>
+		<#if isMaxLimit>
+		    <div class="Box"><p class="tip">最多保存5个地址，当前地址可使用但无法保存。</p></div>
+		</#if>
+		<div class="Box">
+		   <input id="J_submit" type="submit" class="tg-btn" name="button" value="保存并使用" style="width:100%" />
+		</div>	
+	</form>
+</section>
+
+<!--内容 end-->
+<!--footer end-->
+<#include "/WEB-INF/pages/common/footer.ftl">
+<script type="text/javascript">
+$(document).ready(function(){
+	DP.order.addressSelector();
+	DP.order.validateAddr();
+});
+</script>
+</body>

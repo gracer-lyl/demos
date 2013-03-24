@@ -1,0 +1,88 @@
+<#assign ava=JspTaglibs["/WEB-INF/tld/avatar-tags.tld"]>  
+<#include "/WEB-INF/pages/macro/hideMobileNo.ftl">
+<#assign title="配送地址-大众点评团${currentCity.cityName}站" />
+<#include "/WEB-INF/pages/common/header.ftl">
+
+<body>
+	<header>
+		<a href="${mtBase}/buy/${dealId}"  class="return"><span class="return-txt">订单</span></a>收货地址列表
+	</header>
+	
+	<!--内容-->
+	<section>
+	<form action="${mtBase}/buy/${dealId}" id="dealform" method="post">
+		<div class="Box">
+			<h5>请选择要使用的收货人地址</h5>
+			<div class="package-list">
+				<ul class="pay-method">
+				    <#assign isFirstAddress = true/>
+				    <#if deliverForFtl?? >
+				       <li>
+				          <a class="dz" href="javascript:void(0)">
+				             <table cellpadding="0" cellspacing="0" width="100%">
+				                <tr>
+				                	<td>${deliverForFtl.consignee}&nbsp;&nbsp;<@hideMobileNo sourceMobileNo=(deliverForFtl.phoneNo)!""/>
+				                	   <br> <#if deliverForFtl.province != 1 && deliverForFtl.province != 2&& deliverForFtl.province != 9 && deliverForFtl.province != 22>
+							                  <#if deliverForFtl.provinceName?exists>${deliverForFtl.provinceName}省&nbsp;&nbsp;</#if>
+							                </#if>  
+				                	   <#if deliverForFtl.cityName?exists>${deliverForFtl.cityName}市&nbsp;&nbsp;</#if>
+				                	   <#if deliverForFtl.districtName?exists>${deliverForFtl.districtName}&nbsp;&nbsp;</#if>
+				                	   ${deliverForFtl.address}<br>${deliverForFtl.postCode}
+				                	</td>
+				                    <td width="30" align="right" valign="middle">
+				                       <input type="radio" name="address" value=${deliverForFtl.deliverAddressId?c}
+				                         checked<#assign isFirstAddress = false/> >
+				                    </td>
+				                </tr>
+				              </table>
+				           </a>
+		               </li>
+				    </#if>
+				    <#list deliverList as deliver>
+				       <#if (deliverForFtl??) && (deliver.deliverAddressId == deliverForFtl.deliverAddressId) >
+				       <#else>				           
+					       <li>
+					          <a class="dz" href="javascript:void(0)">
+					             <table cellpadding="0" cellspacing="0" width="100%">
+					                <tr>
+					                	<td>${deliver.consignee}&nbsp;&nbsp;<@hideMobileNo sourceMobileNo=(deliver.phoneNo)!""/>
+					                	   <br> <#if deliver.province != 1 && deliver.province != 2&& deliver.province != 9 && deliver.province != 22>
+								                  <#if deliver.provinceName?exists>${deliver.provinceName}省&nbsp;&nbsp;</#if>
+								                </#if>  
+					                	   <#if deliver.cityName?exists>${deliver.cityName}市&nbsp;&nbsp;</#if>
+					                	   <#if deliver.districtName?exists>${deliver.districtName}&nbsp;&nbsp;</#if>
+					                	   ${deliver.address}<br>${deliver.postCode}
+					                	</td>
+					                    <td width="30" align="right" valign="middle">
+					                       <input type="radio" name="address" value=${deliver.deliverAddressId?c}
+					                          <#if isFirstAddress>checked<#assign isFirstAddress = false/></#if> >
+					                    </td>
+					                </tr>
+					              </table>
+					           </a>
+			               </li>
+				       </#if>
+				    </#list>          
+		            
+					<li>
+						<a href="${mtBase}/addaddress">新地址<i class="arrow-ent"></i></a>
+					</li>
+		        </ul>
+		     </div>
+		  </div>
+		  <div class="Box">
+		    	<input type="submit" class="tg-btn" name="" value="确认地址" style="width:100%" />
+		  </div>
+	    </form>
+	</section>
+	<!--内容 end-->
+	<!--footer-->
+
+	<!--footer end-->
+	<#include "/WEB-INF/pages/common/footer.ftl">
+	<script type="text/javascript">
+	$(document).ready(function(){
+		DP.order.selectPayMethod();
+	});
+	</script>
+</body>

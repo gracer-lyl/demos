@@ -1,0 +1,124 @@
+<#include "/WEB-INF/pages/macro/hideMobileNo.ftl">
+<#assign title="提交订单-大众点评团${currentCity.cityName}站" />
+<#assign pageID=171009 />
+<#include "/WEB-INF/pages/common/header.ftl">
+
+
+<body>
+<!--顶部-->
+<header>
+	<a href="javascript:void(0);" onclick="_gaq.push(['_trackEvent', 'deal_buy', 'click', ''])" class="noDirect return returnBack"><span class="return-txt">团购详情</span></a>提交订单
+</header>
+<!--顶部 end-->
+
+<!--内容-->
+<section>
+  <form action="${mtBase}/submit" onclick="_gaq.push(['_trackEvent', 'deal_buy', 'click', ''])" id="checkOurForm" method="post">
+    <input type="hidden" name="mobileNo" value="${currentUser.mobile!""}"/>
+	<#if thisDealGroup.isLottery == true>
+	    <#include "/WEB-INF/pages/order/lottery.ftl">
+	<#else>
+		<input type="hidden" name="dealID" value="${dealID}"/>
+		<input type="hidden" name="price" value="${thisDeal.price?string.computer!""}"/>
+		<div class="Box">
+			<h5>订单信息</h5>
+			<div class="order-list">
+				<ul>
+					<#if thisDealGroup.shortTitle?exists>
+						<li class="item-cls">项目：<a href="${mtBase}/deal/${thisDealGroup.id}" onclick="_gaq.push(['_trackEvent', 'deal_buy', 'click', ''])">${thisDealGroup.shortTitle}</a></li>
+					</#if>
+					<#if (thisDeal.shortTitle?exists) &&(thisDeal.shortTitle!="") >
+						<li>套餐：<span class="infor">${thisDeal.shortTitle}</span></li>
+					</#if>
+		            <li>单价：¥<span class="infor" id="J_price">${thisDeal.price?string.computer}</span></li>
+		            <li>数量：<a class="noDirect num-operating minus" style="background-color:#D6D6D6;" href="javascript:void(0)" data-min="<#if (thisDealGroup.minPerUser>1)>${thisDealGroup.minPerUser}<#else>1</#if>">-</a>
+		                <input id="J_amount" type="text" name="quantity" autocomplete="off" maxlength="4" value="<#if (thisDealGroup.minPerUser>1)>${thisDealGroup.minPerUser}<#else>1</#if>" class="s-input">
+		                <a class="noDirect num-operating plus" href="javascript:void(0)" data-max="${maxCanBoughtPerUser}" data-maxperuser="${thisDealGroup.maxPerUser}">+</a>
+		            	<#if  (thisDealGroup.maxPerUser > 0)><span id="J_textBuy">(可购买${maxCanBoughtPerUser?number}份)</span></#if>
+					</li>
+		            <li>总价：<strong>¥</strong><strong class="price" id="J_totalPrice">${(thisDeal.price*(quantity?number))?string.computer}</strong></li>
+				</ul>
+			</div>
+		</div>
+	    <div class="Box">
+			<h5>您绑定的手机号</h5>
+	        <#if currentUser.mobileNoStatus == 2 && currentUser.mobile!= "">
+	            <div class="nom-box"><@hideMobileNo sourceMobileNo=(currentUser.mobile)!""/></div>
+      		<#else>
+      		    <div class="package-list">
+					<ul>
+					   <li><a href="${mtBase}/mobileBinding">请绑定您的手机号码<i class="arrow-ent"></i></a></li>
+					</ul>
+				</div>	   
+    	    </#if>
+		</div>
+	    <#if  thisDeal.isDeliver>
+	        <input type="hidden" name="price" value="${thisDeal.price?string.computer!""}"/>
+		    <div class="Box">
+				<h5>收货地址</h5>
+		        <div class="package-list">
+					<ul>
+					<#if isHaveAddress == false>
+					    <li><a href="${mtBase}/addaddress">添加收货地址<i class="arrow-ent"></i></a></li>
+					<#else>
+			            <li><div class="item">${deliverAddress.consignee}&nbsp;&nbsp;<@hideMobileNo sourceMobileNo=(deliverAddress.phoneNo)!""/><br>
+			                <#if deliverAddress.province != 1 && deliverAddress.province != 2&& deliverAddress.province != 9 && deliverAddress.province != 22>
+			                  <#if deliverAddress.provinceName?exists>${deliverAddress.provinceName}省&nbsp;&nbsp;</#if>
+			                </#if>  
+				            <#if deliverAddress.cityName?exists>${deliverAddress.cityName}市&nbsp;&nbsp;</#if>
+				            <#if deliverAddress.districtName?exists>${deliverAddress.districtName}&nbsp;&nbsp;</#if>${deliverAddress.address}<br>
+			                ${deliverAddress.postCode}</div></li>
+						<li><a href="${mtBase}/deliveryinfo">使用其他收货地址<i class="arrow-ent"></i></a>	</li>
+					</#if>	
+		        	</ul>
+		        </div>
+		    </div>
+		    <div class="Box">
+				<h5>配送要求</h5>
+	        	<div class="nom-box">
+	        	   <select class="test-select" name="deliverTime">
+	        	       <option value="2" selected="true">只工作日收货</option>
+	                   <option value="3" >只节假日收货</option>
+	                   <option value="1" >工作日、节假日收货</option>
+	        	   </select>
+	        	</div> 
+	        </div>
+		    <div class="Box">
+		     <div class ="order-list">
+		      <ul>			      
+	            <li>
+					<span class="Left">附言：</span><span class="infor Left" style="width:80%;"><input class="test-input" placeholder="若有特殊配送要求，请在此填写" type="text" maxlength="200"name="memo"></span>
+				</li>
+				<#if thisDeal.provideInvoice ==1>
+				  <li>
+	                <span class="Left">发票：</span><span class="infor Left" style="width:80%;"><input class="test-input" placeholder="如需发票请填写抬头" type="text" maxlength="20" name="invoice"></span>
+	              </li>
+	            </#if>	
+			  </ul>
+			    </div>
+		    </div>
+	    </#if>
+	    
+	    <#if thisDealGroup.isAutoRefund>
+	       <div class="Box"><span class="support Left"><i class="icon-s"></i>支持随时退</span><span class="support Left"><i class="icon-s"></i>支持过期退</span></div>
+	    <#else>   
+	       <div class="Box"><span class="support Left"><i class="icon-e"></i>不支持随时退</span><span class="support Left"><i class="icon-e"></i>不支持过期退</span></div>
+	    </#if>
+     </#if>
+    <div class="Box">
+		  <input id="J_submit" type="submit" class="tg-btn"  name="" value=<#if thisDealGroup.isLottery>"确认抽奖"<#else>"提交订单"</#if> style="width:100%" />
+	</div>
+	</form>
+</section>
+<!--内容 end-->
+
+<!--footer end-->
+<#include "/WEB-INF/pages/common/footer.ftl">
+<script type="text/javascript">
+$(document).ready(function(){
+	new DP.changeAmount();
+	DP.order.submitOrder();
+});
+</script>
+<script type="text/javascript">pageTracker._trackPageview('buy/${currentCity.cityName}');</script>
+</body>
