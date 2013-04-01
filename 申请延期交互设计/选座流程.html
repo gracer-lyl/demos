@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>验证团购券</title>
+<script>document.documentElement.className=location.hash?'J_H':'';var G_rtop=+new Date,_gaq=[
+['_setAccount','UA-31098990-1'],
+['_addOrganic','soso','w'],
+['_addOrganic','sogou','query'],
+['_addOrganic','yodao','q'],
+['_addOrganic','bing','q'],
+['_addOrganic','gougou','search'],
+['_setDomainName', 'e.alpha.dp'],
+['_setAllowHash', false]
+],dpga=function(key){_gaq.push(['_trackPageview', key||''])},pageTracker={_trackPageview:dpga};</script>
+
+
+<link rel="stylesheet" href="http://i2.static.dp/b/css/bc.tuangou.css" type="text/css" />
+<style type="text/css">
+.DialogContent .tuan-delay {height: auto;overflow:visible;margin: 10px 8px;background-color: #F7F7F7;}
+.tuan-delay p {height: 36px;line-height:36px;}
+.tuan-delay p label { display:block; float:left; width: 100px; margin-right: 10px; text-align: right; }
+.tuan-delay p span {color:#000;}
+.flow-table {height:330px;margin:0 8px;overflow:auto;overflow-x: hidden;}
+.c-tab th.delay-th,.c-tab td.delay-td { border-color:#E4E4E4;}
+.c-tab th.delay-th {background-color: #F7F7F7;padding: 10px 0;}
+.c-tab td.delay-td {padding: 10px 0;color:#000;}
+.c-tab td.delay-td-fl {text-align:left;}
+
+.DialogContent .sure-delay {height: auto;margin: 0px 40px;}
+.sure-delay .sure-date {height:76px; line-height:76px;color: #000;}
+.sure-delay .sure-date strong {font-size: 18px;margin-left:15px;}
+.c-tab th.delay-th-nobg {background-color:#FFF;border:none;color:#999;}
+.spe-tab td.delay-td, .c-tab td.delay-td-fl {border-right:none;border-left:none;}
+.font-bold {font-weight:bold;}
+</style>
+<script type="text/javascript">
+    (function (){
+        var
+        iframe = null,
+        errors = []
+
+        function sendError(err) {
+            iframe = document.createElement('iframe')
+			iframe.style.display = 'none'
+            iframe.src = '/tuangou/ajax/javascriptCheckLog?error=' + err.err + '&url=' + err.url + '&lineNumber=' + err.line
+            document.body.appendChild(iframe)
+        }
+        window.onerror = function (err, url, line) {
+            errors.push({
+                err:err,
+                url:url,
+                line:line    
+            })
+            }
+        window.onload = function () {
+            var
+            i
+            for(i = 0; i < errors.length; i++) {
+                sendError(errors[i])
+            }
+            errors = {
+                push: function (err) {
+                    sendError(err)
+                }
+            }
+        }
+    })()
+</script>
+
+<script>var __loaderConfig={appBase:'b/js/app/',libBase:'lib/1.0/',server:'e{n}.dpfile.com'};__loaderConfig.server='i{n}.static.dp:1337/branch/neuron';__loaderConfig.appServer='i{n}.static.dp';</script>
+<script src="http://i1.static.dp:1337/lib/1.0/neuron-active.js"></script><script type="text/javascript" src="http://i3.static.dp/x_x/version.js"></script>
+<script>DP.require('Tuangou::common/main');</script>
+
+
+<meta charset=utf-8 />
+
+<link type="text/css" href="css/bc.tuangou.css" rel="stylesheet">
+<style type="text/css">
+.phone-input .input {color: gray;font-weight: normal; font-size: 16px;}
+.phone-input .focus {color: black;font-weight:bold;}
+.no-branch {height:auto;}
+</style>
+
+</head>
+<body>
+<div id="top" class="header">
+    <div class="cont Fix"><h1 class="logo"><a href="http://www.dianping.com" target="_blank" title="大众点评网"><img alt="大众点评网" src="http://i2.static.dp/b/css/img/logo.png"></a><a href="http://t.dianping.com" target="_blank" title="点评团"><img alt="点评团" src="http://i1.static.dp/b/css/img/logot.png"></a></h1>
+          <div class="operat-list">
+          	<span>
+          		<a href="/account/logout">退出</a>
+	          	|
+	          	<a  class="j-password-change" href="javascript:void(0);">修改登录密码</a>
+          	</span>
+          	<a class="t-invite" href="/tuangou/help" rel="nofollow">帮助</a>
+          </div>
+    </div>
+    <div class="nav-wrap">
+          <div class="cont Fix">
+                <ul class="nav">
+               			 <li class="this"><a href="/tuangou/verify?t=1364268286679"><span>验证团购券</span></a></li>
+                 		 <li class=""><a href="/tuangou/consumelist"><span>消费记录</span></a></li>
+               			 <li class=""><a rel="nofollow" href="/tuangou/dealsale"><span>团购数据</span></a></li>
+                  		 <li class=""><a rel="nofollow" href="/tuangou/insertpassword"><span>商家账单</span></a></li>
+                  		 <li class=""><a rel="nofollow" href="/tuangou/scheduler"><span>预约管理</span></a></li>
+                </ul>
+                <span class="phone-num">商户服务热线：<strong>400-880-5597</strong></span> 
+         </div>
+    </div>
+</div>
+
+<div class="main_w">
+	<div class="branch-box branch-more-box">
+    	<h2><span id="coupon-number-verify-shop-name">香山国际大酒店</span> 
+ 			<a href="/tuangou/receiptVerify"><i class="icon-bac"></i>单张验证</a></h2>	
+         <!----多张验证内容区---->
+		<div class="phone-tab">
+				<a href="javascript:void(0)" id="J_goPetch">批量验券</a>
+				<a class="phone-cur" href="javascript:void(0)" id="J_moblie" onclick="pageTracker._trackPageview('dp_bc_tuangou_receiptverify_mobile');">手机号验券<sup>new</sup></a>
+		</div>		 
+		<div class="branch-more">
+		 		<div class="phone-branch">
+							<div class="phone-input"><span>手机号:</span>
+							<input type="text" autocomplete="off" placeholder="请输入购买时使用的手机号" name="txtUsername" id="txtPhone" class="input">
+							<button type="button" class="butn-ech" id="J_sendVerifyBtn" onclick="pageTracker._trackPageview('dp_bc_tuangou_receiptverify_mobile_code');">发送验证码</button>
+							<div id="J_phoneErr" class="f-msg" style="visibility:hidden;"></div>
+							</div>
+							<div class="phone-input"><span>验证码:</span>
+							<input disabled type="text" autocomplete="off" placeholder="请输入验证码" name="txtUsername" id="txtCode" class="input yan" >
+							<button type="button" class="butn-chek butn-disable" onclick="pageTracker._trackPageview('dp_bc_tuangou_receiptverify_mobile_view');" id="J_watchVerifyBtn" disabled>查看</button>
+							<div id="J_codeErr" class="f-msg" style="visibility:hidden;"></div>
+							</div>
+				</div>
+				<h3 class="branch-help-tit"><a id="J_help" href="javascript:void(0)" onclick="pageTracker._trackPageview('dp_bc_tuangou_receiptverify_mobile_how');">查看帮助</a></h3>
+				
+				<div class="branch-butn Fix">
+					<span class="big-btn branch-disable" onclick="pageTracker._trackPageview('dp_bc_tuangou_receiptverify_batchconsume_mobile');" id="J_patchValidateBtn"><button class="btn-txt" disabled>批量验证</button></span>
+				</div>	
+    </div>
+		<!----\多张验证内容区---->
+    </div>
+
+    
+</div>
+
+
+<div class="f-wrap">
+    <div class="f">
+        <p><a href="http://www.dianping.com/aboutus"  target="_blank">关于我们</a>
+         | <a href="http://www.dianping.com/aboutus/media"  target="_blank">媒体报道</a>
+         | <a href="http://www.dianping.com/business/promotion.html"  target="_blank">推广方式</a>
+         | <a href="http://www.dianping.com/business/showcase.html"  target="_blank">成功案例</a>
+         | <a href="http://www.dianping.com/contactus?tab=biz"  target="_blank">联系我们</a>
+        </p>
+        <p>&copy;&nbsp;2003-2012&nbsp;dianping.com,All Rights Reserved.</p>
+    </div>
+</div>
+
+<script type="text/javascript">
+DP.require('Tuangou::mobileverify');
+</script>
+<!--GA start-->
+<script type="text/javascript">
+pageTracker._trackPageview('tuangou/receiptverify/mobile');
+</script>
+<!--GA end-->
+<script type="text/javascript">
+	DP.require('Tuangou::common/password');
+</script>
+
+<script>
+try{var h=document.hippo;h&&h(0, "www.dianping.com").pv(0)}catch(e){};
+</script>
+
+<script type="text/javascript">;(function(){var ga = document.createElement('script');ga.type='text/javascript';ga.async=!0;ga.src='http://i2.static.dp/b/js/res/ga2.js';var s=document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);})();</script>
+<script>
+pageTracker._trackPageview("dp_bc_head_all");
+</script>
+
+</body>
+</html>

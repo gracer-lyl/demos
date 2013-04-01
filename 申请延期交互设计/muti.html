@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>验证团购券</title>
+<script>document.documentElement.className=location.hash?'J_H':'';var G_rtop=+new Date,_gaq=[
+['_setAccount','UA-31098990-1'],
+['_addOrganic','soso','w'],
+['_addOrganic','sogou','query'],
+['_addOrganic','yodao','q'],
+['_addOrganic','bing','q'],
+['_addOrganic','gougou','search'],
+['_setDomainName', 'e.alpha.dp'],
+['_setAllowHash', false]
+],dpga=function(key){_gaq.push(['_trackPageview', key||''])},pageTracker={_trackPageview:dpga};</script>
+
+
+<link rel="stylesheet" href="http://i2.static.dp/b/css/bc.tuangou.css" type="text/css" />
+<style type="text/css">
+.branch a sup{_background:none;_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader ( enabled=bEnabled , sizingMethod=sSize , src=http://i1.static.dp/b/css/img/new-tips.png); }
+.delat-form .tab-panel {display:none;}
+.delat-form .tab-panel-on {display:block;}
+</style><script type="text/javascript">
+    (function (){
+        var
+        iframe = null,
+        errors = []
+
+        function sendError(err) {
+            iframe = document.createElement('iframe')
+			iframe.style.display = 'none'
+            iframe.src = '/tuangou/ajax/javascriptCheckLog?error=' + err.err + '&url=' + err.url + '&lineNumber=' + err.line
+            document.body.appendChild(iframe)
+        }
+        window.onerror = function (err, url, line) {
+            errors.push({
+                err:err,
+                url:url,
+                line:line    
+            })
+            }
+        window.onload = function () {
+            var
+            i
+            for(i = 0; i < errors.length; i++) {
+                sendError(errors[i])
+            }
+            errors = {
+                push: function (err) {
+                    sendError(err)
+                }
+            }
+        }
+    })()
+</script>
+
+<script>var __loaderConfig={appBase:'b/js/app/',libBase:'lib/1.0/',server:'e{n}.dpfile.com'};__loaderConfig.server='i{n}.static.dp:1337/branch/neuron';__loaderConfig.appServer='i{n}.static.dp';</script>
+<script src="http://i1.static.dp:1337/lib/1.0/neuron-active.js"></script><script type="text/javascript" src="http://i3.static.dp/x_x/version.js"></script>
+<script>DP.require('Tuangou::common/main');</script>
+<script type="text/javascript">
+		DP.provide(["Tuangou::common/mbox","io/ajax",'fx/tween']);
+	</script>
+
+
+
+</head>
+<body>
+<div id="top" class="header">
+    <div class="cont Fix"><h1 class="logo"><a href="http://www.dianping.com" target="_blank" title="大众点评网"><img alt="大众点评网" src="http://i2.static.dp/b/css/img/logo.png"></a><a href="http://t.dianping.com" target="_blank" title="点评团"><img alt="点评团" src="http://i1.static.dp/b/css/img/logot.png"></a></h1>
+          <div class="operat-list">
+          	<span>
+          		<a href="/account/logout">退出</a>
+	          	|
+	          	<a  class="j-password-change" href="javascript:void(0);">修改登录密码</a>
+          	</span>
+          	<a class="t-invite" href="/tuangou/help" rel="nofollow">帮助</a>
+          </div>
+    </div>
+    <div class="nav-wrap">
+          <div class="cont Fix">
+                <ul class="nav">
+                  		 <li class="this"><a href="/tuangou/verify?t=1364356736041"><span>验证团购券</span></a></li>
+                 		 <li class=""><a href="/tuangou/deliver_1_-1_0___0_-1___"><span>商家发货</span></a></li>
+                 		 <li class=""><a href="/tuangou/consumelist"><span>消费记录</span></a></li>
+               			 <li class=""><a rel="nofollow" href="/tuangou/deallist"><span>团购数据</span></a></li>
+                  		 <li class=""><a rel="nofollow" href="/tuangou/insertpassword"><span>商家账单</span></a></li>
+                  		 <li class=""><a rel="nofollow" href="/tuangou/scheduler"><span>预约管理</span></a></li>
+                </ul>
+                <span class="phone-num">商户服务热线：<strong>400-880-5597</strong></span> 
+         </div>
+    </div>
+</div>
+
+<div class="main_w">
+    <div class="branch-list">
+				<div class="list-tt bord-tt Fix">
+            <h3><a href="#">延长有效期</a></h3>
+						<span class="i-arowrt"></span>
+						<span class="subd-tts">延期设置</span>
+        </div>
+				<div class="delat-form delat-formb">
+						<ul>
+								<li>
+										<span class="tits">团购号：</span>
+										<div class="f-part">
+											 123456
+										</div>
+								</li>
+								<li>
+										<span class="tits">团购名称：</span>
+										<div class="f-part">
+												[大光明电影院双人观影套餐]仅售74元，价值240元双人观影套餐！
+										</div>
+								</li>
+								<li>
+										<span class="tits">套餐名称：</span>
+										<div class="f-part">
+												悦粤茶餐厅：4人套餐
+										</div>
+								</li>
+								<li>
+										<span class="tits">上线日期：</span>
+										<div class="f-part">
+												2013-03-30
+										</div>
+								</li>
+								<li>
+										<span class="tits">初始有效期：</span>
+										<div class="f-part">
+												2013-03-30
+										</div>
+								</li>
+						</ul>
+						<div id="J_tabs">
+							<ul class="tab">
+								<li class="current"><a href="javascript:void(0)"><span>全部套餐延期</span></a></li>
+								<li><a href="javascript:void(0)"><span>分套餐延期</span></a></li>
+							</ul>
+							<div class="tab-panel combo tab-panel-on">
+									<ul>
+											<li>
+													<span class="tits">最新有效期：</span>
+													<div class="f-part">
+															2013-03-31
+													</div>
+											</li>		
+											<li>
+													<span class="tits"><i class="clr-red">*</i>有效期延至：</span>
+													<div class="f-part">
+															<input value="" class="time-iput J_time" data-beginTime="2013/03/28" data-endTime="2013/05/28">
+													</div>
+													<div id="J_err" class="f-msg" style="visibility: hidden;">
+															<span>请填写需要延期的时间！</span>
+													</div>
+											</li>
+									</ul>
+							</div>
+							<div class="tab-panel combo">
+									<table width="94%" cellspacing="0" cellpadding="0" border="0">
+										<tbody><tr>
+											<th width="46%" scope="col" class="comb-tit">套餐名称</th>
+											<th width="31%" scope="col">最新有效期</th>
+											<th width="23%" scope="col"><i class="clr-red">*</i>有效期延至</th>
+										</tr>
+										<tr>
+											<td class="comb-tit">[大光明电影院双人观影套餐]仅售74元，价值240元双人观影套餐！</td>
+											<td>2013-03-31</td>
+											<td><input value="" data-beginTime="2013/04/22" data-endTime="2013/05/22" class="time-iput J_time" data-sid="120000"></td>
+										</tr>
+										<tr>
+											<td class="comb-tit">[大光明电影院双人观影套餐]仅售74元，价值240元双人观影套餐！</td>
+											<td>2013-03-31</td>
+											<td><input value="" data-beginTime="2013/08/22" data-endTime="2013/09/22" class="time-iput J_time" data-sid="120002"></td>
+										</tr>
+									</tbody></table>
+							</div>
+						</div>
+						
+						
+						<div class="delat-form delat-formb">
+								<div class="butn-bx ">
+										<button id="J_submit" data-id="201000" class="btn-yel big-bttn" type="button">提交申请</button>
+										<a href="#">«返回列表页</a>
+								</div>
+						</div>
+						
+					</div>
+    </div>
+    
+</div>
+
+<div class="f-wrap">
+    <div class="f">
+        <p><a href="http://www.dianping.com/aboutus"  target="_blank">关于我们</a>
+         | <a href="http://www.dianping.com/aboutus/media"  target="_blank">媒体报道</a>
+         | <a href="http://www.dianping.com/business/promotion.html"  target="_blank">推广方式</a>
+         | <a href="http://www.dianping.com/business/showcase.html"  target="_blank">成功案例</a>
+         | <a href="http://www.dianping.com/contactus?tab=biz"  target="_blank">联系我们</a>
+        </p>
+        <p>&copy;&nbsp;2003-2012&nbsp;dianping.com,All Rights Reserved.</p>
+    </div>
+</div>
+
+<!--bussiness code start-->
+<script type="text/javascript">
+DP.data('shopAccountId_current',102768);
+DP.data('shopId_current',3227170);
+DP.data('shopLists',[]);
+
+DP.require('Tuangou::receiptverify');
+</script>
+<!--bussiness code end-->
+<!--GA start-->
+<script type="text/javascript">
+pageTracker._trackPageview('tuangou/receiptverify');
+</script>
+<!--GA end-->
+<script type="text/javascript">
+	DP.require('Tuangou::common/password');
+</script>
+
+<script>
+try{var h=document.hippo;h&&h(4002, "www.dianping.com").pv(0)}catch(e){};
+</script>
+
+<script type="text/javascript">;(function(){var ga = document.createElement('script');ga.type='text/javascript';ga.async=!0;ga.src='http://i2.static.dp/b/js/res/ga2.js';var s=document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);})();</script>
+<script>
+pageTracker._trackPageview("dp_bc_head_all");
+</script>
+
+</body>
+</html>

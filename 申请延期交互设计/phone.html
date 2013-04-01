@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>验证团购券</title>
+<script>document.documentElement.className=location.hash?'J_H':'';var G_rtop=+new Date,_gaq=[
+['_setAccount','UA-31098990-1'],
+['_addOrganic','soso','w'],
+['_addOrganic','sogou','query'],
+['_addOrganic','yodao','q'],
+['_addOrganic','bing','q'],
+['_addOrganic','gougou','search'],
+['_setDomainName', 'e.alpha.dp'],
+['_setAllowHash', false]
+],dpga=function(key){_gaq.push(['_trackPageview', key||''])},pageTracker={_trackPageview:dpga};</script>
+
+
+<link rel="stylesheet" href="http://i2.static.dp/b/css/bc.tuangou.css" type="text/css" />
+<style type="text/css">
+.branch a sup{_background:none;_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader ( enabled=bEnabled , sizingMethod=sSize , src=http://i1.static.dp/b/css/img/new-tips.png); }
+</style><script type="text/javascript">
+    (function (){
+        var
+        iframe = null,
+        errors = []
+
+        function sendError(err) {
+            iframe = document.createElement('iframe')
+			iframe.style.display = 'none'
+            iframe.src = '/tuangou/ajax/javascriptCheckLog?error=' + err.err + '&url=' + err.url + '&lineNumber=' + err.line
+            document.body.appendChild(iframe)
+        }
+        window.onerror = function (err, url, line) {
+            errors.push({
+                err:err,
+                url:url,
+                line:line    
+            })
+            }
+        window.onload = function () {
+            var
+            i
+            for(i = 0; i < errors.length; i++) {
+                sendError(errors[i])
+            }
+            errors = {
+                push: function (err) {
+                    sendError(err)
+                }
+            }
+        }
+    })()
+</script>
+
+<script>var __loaderConfig={appBase:'b/js/app/',libBase:'lib/1.0/',server:'e{n}.dpfile.com'};__loaderConfig.server='i{n}.static.dp:1337/branch/neuron';__loaderConfig.appServer='i{n}.static.dp';</script>
+<script src="http://i1.static.dp:1337/lib/1.0/neuron-active.js"></script><script type="text/javascript" src="http://i3.static.dp/x_x/version.js"></script>
+<script>DP.require('Tuangou::common/main');</script>
+<script type="text/javascript">
+		DP.provide(["Tuangou::common/mbox","io/ajax",'fx/tween']);
+	</script>
+
+
+
+</head>
+<body>
+<div id="top" class="header">
+    <div class="cont Fix"><h1 class="logo"><a href="http://www.dianping.com" target="_blank" title="大众点评网"><img alt="大众点评网" src="http://i2.static.dp/b/css/img/logo.png"></a><a href="http://t.dianping.com" target="_blank" title="点评团"><img alt="点评团" src="http://i1.static.dp/b/css/img/logot.png"></a></h1>
+          <div class="operat-list">
+          	<span>
+          		<a href="/account/logout">退出</a>
+	          	|
+	          	<a  class="j-password-change" href="javascript:void(0);">修改登录密码</a>
+          	</span>
+          	<a class="t-invite" href="/tuangou/help" rel="nofollow">帮助</a>
+          </div>
+    </div>
+    <div class="nav-wrap">
+          <div class="cont Fix">
+                <ul class="nav">
+                  		 <li class="this"><a href="/tuangou/verify?t=1364356736041"><span>验证团购券</span></a></li>
+                 		 <li class=""><a href="/tuangou/deliver_1_-1_0___0_-1___"><span>商家发货</span></a></li>
+                 		 <li class=""><a href="/tuangou/consumelist"><span>消费记录</span></a></li>
+               			 <li class=""><a rel="nofollow" href="/tuangou/deallist"><span>团购数据</span></a></li>
+                  		 <li class=""><a rel="nofollow" href="/tuangou/insertpassword"><span>商家账单</span></a></li>
+                  		 <li class=""><a rel="nofollow" href="/tuangou/scheduler"><span>预约管理</span></a></li>
+                </ul>
+                <span class="phone-num">商户服务热线：<strong>400-880-5597</strong></span> 
+         </div>
+    </div>
+</div>
+
+<div class="main_w">
+    <div class="branch-list">
+    	<div class="list-tt bord-tt Fix">
+            <h3><a href="#">延长有效期</a></h3>
+						<span class="i-arowrt"></span>
+						<span class="subd-tts">手机验证</span>
+        </div>
+		<div class="delat-rule">
+				<ul>
+						<li>为保护您的信息安全，系统需要发送短信验证码到合同所留手机号上，输入正确的验证码后才能进行相应的操作</li>
+						<li>如果下方显示的姓名或手机号码有误，请联系大众点评销售人员</li>
+				</ul>
+		</div>
+		<div class="delat-form delat-formb">
+				<ul>
+						<li>
+								<span class="tits">将手机验证码发送至：</span>
+								<div class="f-part">
+									 <strong>张晓三（186****9577）</strong><button id="J_sendVerifyBtn" class="btn-epico medi-bttn" name="" type="button">发送验证码</button>
+								</div>
+						</li>
+						<li>
+								<span class="tits">验证码：</span>
+								<div class="f-part">
+										<input id="txtCode" value="" name="" class="input-plain inpt-bold" autocomplete="off" disabled>
+								</div>
+								<div id="J_codeErr" class="f-msg" style="visibility:hidden;">
+										<span>验证码错误，请重新输入！</span>
+								</div>
+						</li>
+				</ul>
+				<div class="butn-bx">
+						<button id="J_sureBtn" class="btn-ash big-bttn" name="" type="button" disabled>确定</button>
+						<a href="#">«返回列表页</a>
+				</div>
+		</div>	
+    </div>
+</div>
+
+<div class="f-wrap">
+    <div class="f">
+        <p><a href="http://www.dianping.com/aboutus"  target="_blank">关于我们</a>
+         | <a href="http://www.dianping.com/aboutus/media"  target="_blank">媒体报道</a>
+         | <a href="http://www.dianping.com/business/promotion.html"  target="_blank">推广方式</a>
+         | <a href="http://www.dianping.com/business/showcase.html"  target="_blank">成功案例</a>
+         | <a href="http://www.dianping.com/contactus?tab=biz"  target="_blank">联系我们</a>
+        </p>
+        <p>&copy;&nbsp;2003-2012&nbsp;dianping.com,All Rights Reserved.</p>
+    </div>
+</div>
+
+<!--bussiness code start-->
+<script type="text/javascript">
+DP.data('shopAccountId_current',102768);
+DP.data('shopId_current',3227170);
+DP.data('shopLists',[]);
+
+DP.require('Tuangou::receiptverify');
+</script>
+<!--bussiness code end-->
+<!--GA start-->
+<script type="text/javascript">
+pageTracker._trackPageview('tuangou/receiptverify');
+</script>
+<!--GA end-->
+<script type="text/javascript">
+	DP.require('Tuangou::common/password');
+</script>
+
+<script>
+try{var h=document.hippo;h&&h(4002, "www.dianping.com").pv(0)}catch(e){};
+</script>
+
+<script type="text/javascript">;(function(){var ga = document.createElement('script');ga.type='text/javascript';ga.async=!0;ga.src='http://i2.static.dp/b/js/res/ga2.js';var s=document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);})();</script>
+<script>
+pageTracker._trackPageview("dp_bc_head_all");
+</script>
+
+</body>
+</html>
