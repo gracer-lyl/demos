@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>团购-大众点评团北京站</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" /> 
+<meta charset="utf-8" />
+<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no"  />
+
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="format-detection" content="email=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-title" content="点评团触屏版-北京团购-大众点评团北京站">
+
+<link rel="apple-touch-startup-image" size="640x920" href="t/img/startup4.png" media="(device-height:480px)">
+<link rel="apple-touch-startup-image" href="t/img/startup5.png" media="(device-height:568px)">
+<link rel="apple-touch-icon-precomposed" sizes="57x57" href="t/img/apple-touch-icon-57x57.png" />
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="t/img/apple-touch-icon-72x72.png" />
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="t/img/apple-touch-icon-114x114.png" />
+
+<script>var G_rtop=+new Date,_gaq=[
+['_setAccount','UA-16496742-2'],
+['_addOrganic','soso','w'],
+['_addOrganic','sogou','query'],
+['_addOrganic','yodao','q'],
+['_addOrganic','bing','q'],
+['_addOrganic','360','q'],
+['_addOrganic','gougou','search'],
+['_setDomainName', '.m.dingping.com'],
+['_setAllowHash', false]],
+dpga=function(key){_gaq.push(['_trackPageview', key||''])},
+pageTracker={_trackPageview:dpga},_hip=[
+['_setPageId', 171021]];
+</script>
+<link  href="t/css/t.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+	<header>
+		<div class="header-box">
+			<div class="search-mode">
+				<div class="search">
+				<form action="/tuan/search" method="get" id="searchForm" autocomplete="off" onSubmit="alert(2);return false;">
+					 <input type="text" autocomplete="off" autocapitalize="off" autocorrect="off" class="default" placeholder="输入团购商户名、类别、商区等关键字" name="keyword" id="J_search_input">
+					 <!--<a href="javascript:void(0)" title="搜索" class="search-icon"  id="J_search_btn"></a>-->
+					 <button type="submit" class="search-icon" title="搜索" id="J_search_btn"></button>
+				</form>
+				</div>
+				<a href="javascript:void(0)" onclick="_gaq.push(['_trackEvent', 'search_back', 'click', ''])" title="返回" class="noDirect search-cancel returnBack">返回</a>
+			</div>
+		</div>
+	</header>
+
+
+	<section class="main">
+		<div class="search-list">
+			<ul id="J_search_ul">
+			</ul>
+		</div>
+	</section>
+<script src="t/js/zepto.min.js" type="text/javascript"></script>
+<script src="t/js/base.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	DP.app.returnBack($('.returnBack'));
+	if(navigator.userAgent.indexOf('Android') === -1){
+	    if(window.navigator.standalone) {
+	    	DP.app.webAppLink();
+	    }
+	    
+	    window.onload = function(){
+	        setTimeout(function(){
+	            window.scrollTo(0,1);
+	        }, 10);
+	    };
+	    
+	}
+});
+
+</script>
+<script type="text/javascript">
+(function() {
+    var ga = document.createElement('script');
+    ga.type = 'text/javascript';
+    ga.async = true;
+    ga.src = 'http://i1.dpfile.com/s/res/ga.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+})();
+</script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+		DP.app.search(true);
+	});
+	</script>
+	<script type="text/javascript">pageTracker._trackPageview('search//北京');</script>
+
+	<footer class="footer slide">
+		<div class="login"><strong>kissy小鬼</strong>，<a href="http://m.dianping.com/logout">退出</a><span class="city"><strong>北京</strong>  <a href="http://m.dianping.com/tuan/citylist" onclick="_gaq.push(['_trackEvent', 'footer_city', 'click', '']);">切换城市</a></span></div>
+		<div><a href="http://m.dianping.com/tuan/beijing" title="" onclick="_gaq.push(['_trackEvent', 'footer_home', 'click', '']);">首页</a><em>|</em><a href="http://m.dianping.com/tuan/receiptlist" title="" onclick="_gaq.push(['_trackEvent', 'footer_coupon', 'click', '']);">我的点评团</a><em>|</em><a href="http://wap.dianping.com/tuan/appdownload" title="" onclick="_gaq.push(['_trackEvent', 'footer_app', 'click', '']);">客户端</a><em>|</em><a href="http://wap.dianping.com/tuan" title="" onclick="_gaq.push(['_trackEvent', 'footer_wap', 'click', '']);">标准版</a><em>|</em><a href="http://t.dianping.com" title="" onclick="_gaq.push(['_trackEvent', 'footer_web', 'click', '']);">电脑版</a></div>
+		<p>©t.dianping.com   大众点评网</p>
+	</footer>
+</body>
+</html>
